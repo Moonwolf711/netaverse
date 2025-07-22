@@ -6,28 +6,35 @@ This repository contains a Shopify Online Store 2.0 theme with a Three.js hero s
 
 1. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+1. Install dependencies:
+
+```bash
+npm install
+```
 
 2. Build assets:
 
-   ```bash
-   npm run build
-   ```
+```bash
+npm run build
+```
 
-3. Push the theme:
+3. Preview the theme locally:
 
-   ```bash
-   shopify theme push --path netaverse_theme
-   ```
+```bash
+shopify theme dev --path netaverse_theme
+```
 
-4. Deploy the Cloudflare worker:
+4. Push the theme to your store:
 
-   ```bash
-   cd serverless/cloudflare
-   wrangler publish
-   ```
+```bash
+shopify theme push --path netaverse_theme
+```
 
-Copy `.env.example` to `.env` and fill in your credentials.  
-GitHub Actions will deploy on every push to `main`.
+5. Deploy the Cloudflare worker:
+
+```bash
+cd serverless/cloudflare
+wrangler publish
+```
+
+Copy `.env.example` to `.env` and fill in your credentials. GitHub Actions will deploy on every push to `main`.
