@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary color",
+        "default": "#ff0000"
+      },
+      {
+        "type": "font",
+        "id": "body_font",
+        "label": "Body font"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_parallax",
+        "label": "Enable parallax",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_galaxy_trail",
+        "label": "Enable galaxy trail",
+        "default": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+name: Deploy theme
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build
+      - run: npm install -g @shopify/cli @lhci/cli
+      - run: shopify theme push --path netaverse_theme
+        env:
+          SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_TOKEN }}
+      - run: lhci autorun

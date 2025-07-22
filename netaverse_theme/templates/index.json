@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement_bar"
+    },
+    "main": {
+      "type": "image_banner"
+    }
+  },
+  "order": ["announcement-bar", "main"]
+}
