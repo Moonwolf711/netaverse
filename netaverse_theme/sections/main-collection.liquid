@@ -1,0 +1,16 @@
+<section class="main-collection">
+  <h1>{{ collection.title }}</h1>
+  <div class="products">
+    {% for product in collection.products %}
+      <div class="product">
+        <a href="{{ product.url }}">{{ product.title }}</a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main collection"
+}
+{% endschema %}

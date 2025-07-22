@@ -1,0 +1,19 @@
+<section class="main-product">
+  {{ product.title }}
+  <div class="product-images">
+    {% for image in product.images %}
+      <img src="{{ image | img_url: '800x' }}" alt="{{ image.alt | escape }}">
+    {% endfor %}
+  </div>
+  <div class="product-price">{{ product.price | money }}</div>
+  <form action="/cart/add" method="post">
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <button type="submit">Add to cart</button>
+  </form>
+</section>
+
+{% schema %}
+{
+  "name": "Main product"
+}
+{% endschema %}

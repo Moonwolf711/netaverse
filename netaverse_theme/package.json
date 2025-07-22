@@ -1,0 +1,12 @@
+{
+  "name": "netaverse_theme",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "esbuild assets/src/main.js --bundle --outfile=assets/dist/theme.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.18.11"
+  }
+}
