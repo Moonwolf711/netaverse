@@ -1,0 +1,21 @@
+name: Deploy worker
+
+on:
+  push:
+    paths:
+      - 'serverless/cloudflare/**'
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm install -g wrangler
+      - run: wrangler publish
+        working-directory: serverless/cloudflare
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

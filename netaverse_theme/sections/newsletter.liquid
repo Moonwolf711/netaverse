@@ -1,0 +1,17 @@
+<div class="newsletter">
+  <h2>{{ 'newsletter.heading' | t }}</h2>
+  <form method="post" action="/contact#contact_form" id="contact_form">
+    <input type="hidden" name="form_type" value="customer">
+    <input type="email" name="contact[email]" placeholder="{{ 'newsletter.placeholder' | t }}" required>
+    <button type="submit">{{ 'newsletter.button' | t }}</button>
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "presets": [
+    { "name": "Newsletter" }
+  ]
+}
+{% endschema %}

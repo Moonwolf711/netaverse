@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: var(--font-body, sans-serif);
+}
+
+.announcement-bar {
+  background: var(--color-primary, #ff0000);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
