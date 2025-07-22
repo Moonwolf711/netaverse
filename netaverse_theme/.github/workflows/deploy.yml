@@ -14,6 +14,7 @@ jobs:
           node-version: 18
           cache: 'npm'
       - run: npm install
+        working-directory: netaverse_theme
       - run: npm run build
       - run: npm install -g @shopify/cli @lhci/cli
       - run: shopify theme push --path netaverse_theme
